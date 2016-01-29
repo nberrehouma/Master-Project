@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated transform -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="transform.presentation.TransformModelWizardID"
+            name="%_UI_TransformModelWizard_label"
+            class="transform.presentation.TransformModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TransformModelFile.gif">
+         <description>%_UI_TransformModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated transform -->
+      <editor
+            id="transform.presentation.TransformEditorID"
+            name="%_UI_TransformEditor_label"
+            icon="icons/full/obj16/TransformModelFile.gif"
+            extensions="transform"
+            class="transform.presentation.TransformEditor"
+            contributorClass="transform.presentation.TransformActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

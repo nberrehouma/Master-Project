@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated grammar -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="grammar.presentation.GrammarModelWizardID"
+            name="%_UI_GrammarModelWizard_label"
+            class="grammar.presentation.GrammarModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GrammarModelFile.gif">
+         <description>%_UI_GrammarModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated grammar -->
+      <editor
+            id="grammar.presentation.GrammarEditorID"
+            name="%_UI_GrammarEditor_label"
+            icon="icons/full/obj16/GrammarModelFile.gif"
+            extensions="grammar"
+            class="grammar.presentation.GrammarEditor"
+            contributorClass="grammar.presentation.GrammarActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

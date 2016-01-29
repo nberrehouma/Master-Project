@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/GraphGrammar/src" modelPluginID="GraphGrammar"
+    modelName="Grammar" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../GraphModel/model/graph.genmodel#//graph" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>grammar.ecore</foreignModel>
+  <genPackages prefix="Grammar" disposableProviderFactory="true" ecorePackage="grammar.ecore#/">
+    <genClasses ecoreClass="grammar.ecore#//Grammar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//Grammar/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//Rule">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference grammar.ecore#//Rule/parentGrammar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//Rule/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//Rule/rhs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Rule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//Rule/priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//Rule/EmbeddingMechanism"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//LHS">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference grammar.ecore#//LHS/parentRule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grammar.ecore#//LHS/node"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//RHS">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference grammar.ecore#//RHS/parentRule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grammar.ecore#//RHS/subGraph"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//Embedding">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference grammar.ecore#//Embedding/ParentRule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grammar.ecore#//Embedding/instructions"/>
+    </genClasses>
+    <genClasses ecoreClass="grammar.ecore#//ConnexionInstruction">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference grammar.ecore#//ConnexionInstruction/parentEmbedding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grammar.ecore#//ConnexionInstruction/m"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grammar.ecore#//ConnexionInstruction/d"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
