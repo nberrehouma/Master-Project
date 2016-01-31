@@ -11,5 +11,45 @@
             name="Graph Transformation System">
       </editor>
    </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            description="menu principale de l editeur visuel"
+            id="VisualEditor.GraphTransformationActionset"
+            label="menu principale de l editeur visuel"
+            visible="true">
+         <menu
+               id="VisualEditor.GraphTransformationmenu"
+               label="G&amp;raphTransformation"
+               path="additions">
+         </menu>
+         <action
+               class="ExecuteRuleActionDelagate"
+               icon="Normal/additions"
+               id="VisualEditor.ExecuteRuleAction"
+               label="E&amp;xecute Rule"
+               menubarPath="VisualEditor.GraphTransformationmenu/content"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="executer la règle de production séléctionnée sur le graphe hôte">
+         </action>
+         <action
+               id="VisualEditor.chargerGraphhote"
+               label="Load Hote Graph"
+               menubarPath="VisualEditor.GraphTransformationmenu/content"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="charger le graphe hote sur lequel sera effectuer les transformations">
+         </action>
+         <action
+               id="VisualEditor.chagerGramaire"
+               label="Load Grammar"
+               menubarPath="VisualEditor.GraphTransformationmenu/content"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="charger une grammaire de graphe">
+         </action>
+      </actionSet>
+   </extension>
 
 </plugin>
