@@ -42,12 +42,19 @@
                tooltip="charger le graphe hote sur lequel sera effectuer les transformations">
          </action>
          <action
+               icon="Normal/additions"
                id="VisualEditor.chagerGramaire"
                label="Load Grammar"
                menubarPath="VisualEditor.GraphTransformationmenu/content"
                style="push"
                toolbarPath="Normal/additions"
                tooltip="charger une grammaire de graphe">
+         </action>
+         <action
+               id="VisualEditor.apropos"
+               label="A propos de notre travail "
+               menubarPath="VisualEditor.GraphTransformationmenu/content"
+               style="push">
          </action>
       </actionSet>
    </extension>
