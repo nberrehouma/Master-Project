@@ -19,6 +19,7 @@ package graph;
  * @model abstract="true"
  * @generated
  */
+ //Interface Typed .... with SuperClass Named 
 public interface Typed extends Named {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
