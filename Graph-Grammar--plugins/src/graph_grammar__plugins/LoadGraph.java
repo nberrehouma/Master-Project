@@ -32,6 +32,12 @@ public class LoadGraph {
 			//{[List of vertex....], [list of link (source,dest), ..... ]}
 			System.out.println("loaded: " + G);
 			System.out.println("******The Graph********");
+			System.out.println("");
+			//Print only Nodes
+			System.out.println("Different Nodes are " + G.getNodes());
+			//Print only Edges
+			System.out.println("Different Edges are " + G.getEdges());
+			
 		}
 		catch (IOException e)
 		{
