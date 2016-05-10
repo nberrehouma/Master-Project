@@ -189,5 +189,9 @@ public interface Rule extends EObject {
 	 * @generated
 	 */
 	void setEmbeddingMechanism(Embedding value);
+	
+	public  void zeroMarkRule();
+	public  void unMarkRule();
+	public  int Mark();
 
 } // Rule

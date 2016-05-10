@@ -48,7 +48,10 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule {
 	 * @ordered
 	 */
 	protected LHS lhs;
-
+	private int marker = 0; //pour marquer une règle
+	public  void unMarkRule(){marker=1;}
+	public  void zeroMarkRule(){marker=0;}
+	public  int Mark(){return marker;}
 	/**
 	 * The cached value of the '{@link #getRhs() <em>Rhs</em>}' containment reference.
 	 * <!-- begin-user-doc -->
