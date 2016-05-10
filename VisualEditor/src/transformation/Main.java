@@ -32,14 +32,14 @@ public class Main {
 	
 	public static void main(String[] args) {
 	
-		System.out.println("host graph");
- Graph a =loadGraph("file:///E:/bara/runtime-EclipseApplication/Eg1/host.graph");
-	System.out.println("loaded: " + a);
+		//System.out.println("host graph");
+ //Graph a =loadGraph("file:///E:/bara/runtime-EclipseApplication/Eg1/host.graph");
+//	System.out.println("loaded: " + a);
 	  // System.out.println("X vers D ");
 	// Graph b =loadGraph("file:///E:/bara/runtime-EclipseApplication/Eg1/d1.graph");
 		//System.out.println("loaded: " + b);
 
- Grammar g= loadGrammar("file:///E:/bara/runtime-EclipseApplication/xx/M.grammar");
+ Grammar g= loadGrammar("file:///E:/bara/runtime-EclipseApplication/xx/prio_eg.grammar");
 //	System.out.println("loaded: " + g);
 	
 	/*EList<Node> n=b.getNodes();
@@ -51,9 +51,13 @@ public class Main {
 		if (t.equals(x)) { b.getNodes().remove(t); }
 	}*/
 	
-	executeGrammar(a,g);
+	//executeGrammar(a,g);
 	
-	System.out.println("Resulat: " + a);
+	//System.out.println("Resulat: " + a);
+ System.out.println(" Avant " + g.getRules());
+ EList<Rule> rules = g.getRules();
+ EList<Rule> rules_ordonnee = priorite(rules); // ordonné par rapport au priorité
+ System.out.println(" Après " +rules_ordonnee);
 	
 	}
 
@@ -97,7 +101,7 @@ public static Grammar loadGrammar(String path){
 		resourceGrammar.load(null);
 		
 		Grammar g = (Grammar)resourceGrammar.getContents().get(0);
-		System.out.println(g);
+		//System.out.println(g);
 		return g;		
 		}
 	catch (IOException e)
@@ -268,28 +272,52 @@ private static void supprimer(Graph gr, Node n)
 	}
 
 //rule qui à la priorité
-private static Rule prio(EList<Rule> R) {
+private static EList<Rule> priorite(EList<Rule> R) {
 	
-	Iterator<Rule> i =R.iterator();
-	Rule r=i.next();
-	int max=r.getPriority();
-	Rule Rm=r;
-	while(i.hasNext())
-	{
-		Rule k=i.next();
-		if (k.getPriority() > max ) 
-		{
-			Rm=k;
-		}
-		
-	}
-	delete(R,Rm);
-	return Rm;
-	}
+	Rule r;
+	int min ;
+	int p=-1;
+    int last_p = -1;
+ 
+	EList<Rule> rule_prio = R ; 
 
-private static void delete(EList<Rule> r, Rule rm) {
-	// TODO Auto-generated method stub
-	r.remove(rm);
-	//totaly wit link / node only
-  }
+	EList<Rule> temp = R;
+	int i=0;
+	int temp1=0;
+	 int m;
+	
+	while(temp1<=R.size())
+	{
+		
+		min=temp.get(0).getPriority();
+		for ( i=0; i<temp.size(); i++)
+		{
+			r = temp.get(i);
+			m=r.Mark(); //System.out.println(m);
+			if (m==0) 
+			{
+			if (r.getPriority() <= min)
+			  {
+				min = r.getPriority();
+			//	System.out.println("min "+min);
+			    p = i; //System.out.println(p + "p");
+			 }
+			}
+		}
+		if (p!= -1 && p!= last_p)
+		{  
+			rule_prio.remove(p);
+			System.out.println(rule_prio);
+			rule_prio.add(temp.get(p));
+			//System.out.println(rule_prio);
+			temp.get(p).unMarkRule();
+			System.out.println(p + "p");
+			last_p = p;
+		}
+		temp1++;
+	}
+		return rule_prio;
+}
+
+
 }
