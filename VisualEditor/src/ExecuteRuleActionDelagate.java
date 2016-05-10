@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Iterator;
+import java.util.Random;
+
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
@@ -423,7 +425,12 @@ public class ExecuteRuleActionDelagate implements IWorkbenchWindowActionDelegate
 			  }
 			  else if (ex_p=="aleatoire")
 			  {
-				  out.println("Recursive - random ..... en cours de dvpt");
+				  while(all_marked(rules)==false)
+				  {
+					  Rule rule = rules.get(new Random().nextInt(rules.size()));  
+					  rule.unMarkRule();
+					  executeRule(gr,rule);  
+				  }
 			  }
 		  }
 	  
