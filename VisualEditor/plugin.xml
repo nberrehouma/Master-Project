@@ -40,16 +40,6 @@
                tooltip="executer la règle de production séléctionnée sur le graphe hôte">
          </action>
          <action
-               class="LoadGraphActionDelegate"
-               icon="src/Icon/New.GIF"
-               id="VisualEditor.nouveauGraphhote"
-               label="New  Host Graph"
-               menubarPath="VisualEditor.GraphTransformationmenu/content"
-               style="push"
-               toolbarPath="Normal/additions"
-               tooltip="charger le graphe hote sur lequel sera effectuer les transformations">
-         </action>
-         <action
                class="LoadGrammarAD"
                icon="src/Icon/open.GIF"
                id="VisualEditor.chagerGramaire"
@@ -65,14 +55,6 @@
                menubarPath="VisualEditor.GraphTransformationmenu/content"
                style="push">
          </action>
-         <action
-               class="ViewPreferenceValues"
-               id="VisualEditor.action1aaa"
-               label="View P"
-               menubarPath="VisualEditor.GraphTransformationmenu/content"
-               style="push"
-               toolbarPath="Normal/additions">
-         </action>
       </actionSet>
    </extension>
    <extension
@@ -84,14 +66,14 @@
       <wizard
             category="GraphTransformation"
             class="visualeditor.wizards.GraphNewWizard"
-            icon="icons/sample.gif"
+            icon="icon/graph.GIF"
             id="visualeditor.wizards.GraphNewWizard"
             name="new graph">
       </wizard>
       <wizard
             category="GraphTransformation"
             class="visualeditor.wizards.GrammarNewWizard"
-            icon="icons/sample.gif"
+            icon="icon/grammar.GIF"
             id="visualeditor.wizards.GrammarNewWizard"
             name="new grammar">
       </wizard>
