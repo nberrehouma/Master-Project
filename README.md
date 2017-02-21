@@ -13,3 +13,4 @@ productions ; une production est, en général, un triplet (M, D, E) où M et D
 de mécanisme(règles) de connexion.
 ## **2015/2016**
 
+new moification 
